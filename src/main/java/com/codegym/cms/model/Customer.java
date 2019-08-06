@@ -10,6 +10,9 @@ public class Customer {
     private Long id;
     private String firstName;
     private String lastName;
+    @ManyToOne
+    @JoinColumn(name = "province_id")
+    private Province province;
 
     public Customer() {
     }
@@ -41,5 +44,13 @@ public class Customer {
     public Customer(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
+    }
+
+    public Province getProvince() {
+        return province;
+    }
+
+    public void setProvince(Province province) {
+        this.province = province;
     }
 }
